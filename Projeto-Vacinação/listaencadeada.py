@@ -9,8 +9,8 @@ class ListaEncadeada:
         self.tamanho = 0
 
     def inserir_inicio(self, valor):
-        novo = Elemento(valor)              # Cria um novo elemento
-        novo.proximo = self.inicio    # O novo elemento ira aponta para o antigo início
+        novo = Elemento(valor)              # cria um novo elemento
+        novo.proximo = self.inicio    # o novo elemento ira aponta para o antigo início
         self.inicio = novo            # depois vai atualizar o inicio
         self.tamanho += 1            
 
@@ -27,10 +27,11 @@ class ListaEncadeada:
     def remover_inicio(self):
         if self.inicio is None:
             return None 
-        valor = self.inicio.valor
-        self.inicio = self.inicio.proximo 
+        valor = self.inicio.valor     # guarda o "primeiro" elemento em valor  
+        self.inicio = self.inicio.proximo # depois de "remover", o segundo vira o primeiro
         self.tamanho -= 1
-        return valor
+        return valor  # devolve o elemento que foi tirado 
 
     def esta_vazia(self):
+
         return self.inicio is None
