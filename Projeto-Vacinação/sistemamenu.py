@@ -7,14 +7,14 @@ class SistemaVacinacao:
         self.pilha_frascos = Pilha()
         self.vacinados = []
         
-        for i in range(3): # Empilha 3 frascos com 5 doses cada
+        for i in range(3): # empilha 3 frascos com 5 doses cada
             self.pilha_frascos.empilhar(5)
         self.doses_disponiveis = 15
         self.dose_atual = 0
 
     def adicionar_pessoa(self, nome, cpf):
 
-        cpf = str(cpf)
+        cpf = str(cpf) #vai transformar o cpf em string para poder saber se ele se encaixa como um cpf real
         cpf = cpf.strip()
         cpf = cpf.replace(".", "").replace("-", "")
 
@@ -32,7 +32,7 @@ class SistemaVacinacao:
         return "Pessoa adicionada com sucesso!"
 
 
-    def vacinar_pessoa(self):    # Vacina a próxima pessoa da fila
+    def vacinar_pessoa(self):    
 
         if self.fila.esta_vazia():
             return "Não há pessoas na fila."
@@ -71,3 +71,4 @@ class SistemaVacinacao:
 
     def doses_restantes(self):
         return self.doses_disponiveis
+
